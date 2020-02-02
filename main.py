@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    """Return a friendly HTTP greeting."""
     return 'Hello I like to make AI Apps'
 
 @app.route('/name/<value>')
@@ -22,7 +21,6 @@ def bob():
 
 @app.route('/html')
 def html():
-    """Returns some custom HTML"""
     return """
     <title>This is a Hello World World Page</title>
     <p>Hello</p>
