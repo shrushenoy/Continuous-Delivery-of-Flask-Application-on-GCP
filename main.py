@@ -39,18 +39,6 @@ def wikipedia_route(company):
     result = wikipedia.summary(company, sentences=10)
     return result
 
-    # Imports the Google Cloud client library
-    from google.cloud import language
-    from google.cloud.language import enums
-    from google.cloud.language import types
-    result = wikipedia.summary(company, sentences=10)
-
-    client = language.LanguageServiceClient()
-    document = types.Document(
-        content=result,
-        type=enums.Document.Type.PLAIN_TEXT)
-    entities = client.analyze_entities(document).entities
-    return str(entities)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
